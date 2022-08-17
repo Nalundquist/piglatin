@@ -2,12 +2,21 @@
 function firstVowel(e) {
   //make a for statement that would go down the line of the word and stop when we hit a vowel
   for (i=0; i < e.length; i++) {
-    if (e[i] === "a" || e[i] === "e" || e[i] === "i" || e[i] === "o" || e[i] === "u") {
+		if (e[0] === "q" && e[1] === "u") {
+			let quString = ""
+			for (i=2; i < e.length; i++) {
+			  quString = quString.concat(e[i])
+			}
+			quString = quString.concat("quay")
+			return quString;
+      // quack -> ack
+      // ack -> quay
+		} else if (e[i] === "a" || e[i] === "e" || e[i] === "i" || e[i] === "o" || e[i] === "u") {
       return e[i]
     } else {
-      return "no vowels"
-    }
+		}
   }
+	return "no vowels"
 
 
 }
@@ -19,7 +28,7 @@ function pLTranslator(e){
   pLSplit.forEach(function(e) {
     vTester.push(firstVowel(e))
   })
-  return pLSplit;
+  return vTester;
 }
 
 // User Interface Logic
