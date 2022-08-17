@@ -1,7 +1,7 @@
 // Business Logic
 function firstVowel(e) {
   //make a for statement that would go down the line of the word and stop when we hit a vowel
-  for (i=0; i < e.length; i++) {
+ //for (i=0; i < e.length; i++) {
 		if (e[0] === "q" && e[1] === "u") {
 			let quString = ""
 			for (i=2; i < e.length; i++) {
@@ -9,17 +9,38 @@ function firstVowel(e) {
 			}
 			quString = quString.concat("quay")
 			return quString;
-      // quack -> ack
-      // ack -> quay
-		} else if (e[i] === "a" || e[i] === "e" || e[i] === "i" || e[i] === "o" || e[i] === "u") {
-      return e[i]
+		} else if (e[0] === "a" || e[0] === "e" || e[0] === "i" || e[0] === "o" || e[0] === "u") {
+        let vString = ""
+        for (i=0; i < e.length; i++) {
+          vString = vString.concat(e[i]);
+        }
+        vString = vString.concat("way")
+        return vString
     } else {
+      let x
+      for (i=0; i <e.length; i++) {
+        if (e[i] === "a" || e[i] === "e" || e[i] === "i" || e[i] === "o" || e[i] === "u") {
+          x = i
+          break
+        }
+      }
+      let cString = ""
+      for (i=x; i < e.length; i++) {
+        cString = cString.concat(e[i]);
+      }
+      for (i=0; i < x; i++) {
+        cString = cString.concat(e[i]);
+      }
+      cString = cString.concat("ay")
+      return cString
+
 		}
   }
-	return "no vowels"
+	// return "no vowels"
 
 
-}
+//}
+//(e[i] === "a" || e[i] === "e" || e[i] === "i" || e[i] === "o" || e[i] === "u")
 
 
 function pLTranslator(e){
